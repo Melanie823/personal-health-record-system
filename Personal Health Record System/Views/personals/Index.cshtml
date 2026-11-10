@@ -1,0 +1,167 @@
+﻿@model IEnumerable<Personal_Health_Record_System.Models.personal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MobilePhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ContactAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmergencyContactName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmergencyContactRelationship)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmergencyContactPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicalHistory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FamilyHistory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CurrentIllness)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SleepPattern)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BreakfastHabit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseHabit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SmokingHabit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlcoholHabit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BetelNutHabit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthPromotionNeeds)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Account)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobilePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactRelationship)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmergencyContactPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Occupation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicalHistory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FamilyHistory)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CurrentIllness)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SleepPattern)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreakfastHabit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExerciseHabit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SmokingHabit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlcoholHabit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BetelNutHabit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthPromotionNeeds)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

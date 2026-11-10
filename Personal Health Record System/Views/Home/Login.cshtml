@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <div class="d-flex align-items-center">
+            <a href="@Url.Action("Details", "Personals", new { account = Context.Session.GetString("UserAccount") })"
+               class="btn btn-outline-primary me-2">查看個人資料</a>
+        </div>
+
+        <div class="ms-auto">
+            <button class="btn btn-outline-danger" onclick="confirmLogout()">登出</button>
+        </div>
+    </div>
+</nav>
+
+
+<div class="text-center bg-light py-5">
+    <div class="container">
+        <h1 class="display-3 text-primary">歡迎來到個人健康紀錄系統</h1>
+        <p class="lead text-secondary">隨時紀錄您的健康狀況，守護您的每一天</p>
+        <div class="my-4">
+            <a href="/Healths/Create" class="btn btn-success btn-lg">新增今日紀錄</a>
+            <a href="/Healths" class="btn btn-outline-primary btn-lg ms-3">查看歷史紀錄</a>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <h3 class="mt-3">每日檢查</h3>
+                <p>保持健康的第一步，每天紀錄您的體溫、血壓、脈搏等資訊。</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="mt-3">運動紀錄</h3>
+                <p>追蹤您的運動習慣，讓健康成為日常的一部分。</p>
+            </div>
+            <div class="col-md-4">
+                <h3 class="mt-3">睡眠品質</h3>
+                <p>了解您的睡眠情況，提升睡眠質量，擁有更好的生活狀態。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmLogout() {
+        if (confirm("確定要登出嗎？")) {
+            window.location.href = "/Home/Index";
+        }
+    }
+</script>

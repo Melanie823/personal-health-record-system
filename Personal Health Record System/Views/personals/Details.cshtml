@@ -1,0 +1,91 @@
+﻿@model Personal_Health_Record_System.Models.personal
+
+@{
+    ViewData["Title"] = "個人資料詳情";
+}
+
+<h1 class="text-center text-primary my-4">個人資料詳情</h1>
+
+<div class="card shadow p-4 mb-5 bg-white rounded">
+    <div class="card-body">
+        <h4 class="card-title text-secondary">基本資料</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Account)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Account)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Password)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Password)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Name)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Name)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.DateOfBirth)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DateOfBirth)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Gender)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Gender)</dd>
+        </dl>
+
+        <h4 class="card-title text-secondary mt-4">聯絡資訊</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.MobilePhone)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MobilePhone)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.ContactAddress)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ContactAddress)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.EmergencyContactName)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.EmergencyContactName)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.EmergencyContactPhone)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.EmergencyContactPhone)</dd>
+        </dl>
+
+        <h4 class="card-title text-secondary mt-4">健康資訊</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Height)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Height)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.Weight)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Weight)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.MedicalHistory)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.MedicalHistory)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.FamilyHistory)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.FamilyHistory)</dd>
+                            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.CurrentIllness)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.CurrentIllness)</dd>
+
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.SleepPattern)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SleepPattern)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.BreakfastHabit)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.BreakfastHabit)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.ExerciseHabit)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ExerciseHabit)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.SmokingHabit)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.SmokingHabit)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.AlcoholHabit)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.AlcoholHabit)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.BetelNutHabit)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.BetelNutHabit)</dd>
+            
+            <dt class="col-sm-3 text-secondary">@Html.DisplayNameFor(model => model.HealthPromotionNeeds)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.HealthPromotionNeeds)</dd>            
+        </dl>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary px-5">編輯</a>
+    <a asp-controller="Home" asp-action="Login" class="btn btn-secondary px-5 ms-3">返回首頁</a>
+</div>

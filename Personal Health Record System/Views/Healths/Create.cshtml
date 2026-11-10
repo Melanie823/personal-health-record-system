@@ -1,0 +1,117 @@
+﻿@model Personal_Health_Record_System.Models.Health
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center text-primary">新增健康紀錄</h1>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+            <!-- 帳號顯示 -->
+            <div class="mb-3">
+                <label for="Account" class="form-label">帳號(身分證字號)</label>
+                <input type="text" id="Account" name="Account" class="form-control" value="@ViewBag.Account" readonly>
+            </div>
+
+            <!-- 血壓資訊 -->
+            <h4 class="mt-4">血壓資訊</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="SystolicPressure" class="form-label"></label>
+                    <input asp-for="SystolicPressure" class="form-control" placeholder="請輸入收縮壓">
+                    <span asp-validation-for="SystolicPressure" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="DiastolicPressure" class="form-label"></label>
+                    <input asp-for="DiastolicPressure" class="form-control" placeholder="請輸入舒張壓">
+                    <span asp-validation-for="DiastolicPressure" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- 其他健康資訊 -->
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label asp-for="BloodOxygen" class="form-label"></label>
+                    <input asp-for="BloodOxygen" class="form-control" placeholder="請輸入血氧 (%)">
+                    <span asp-validation-for="BloodOxygen" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="HeartRate" class="form-label"></label>
+                    <input asp-for="HeartRate" class="form-control" placeholder="請輸入脈搏 (bpm)">
+                    <span asp-validation-for="HeartRate" class="text-danger"></span>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label asp-for="BodyTemperature" class="form-label"></label>
+                    <input asp-for="BodyTemperature" class="form-control" placeholder="請輸入體溫 (°C)">
+                    <span asp-validation-for="BodyTemperature" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- 飲食和睡眠資訊 -->
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="FastingBloodSugar" class="form-label"></label>
+                    <input asp-for="FastingBloodSugar" class="form-control" placeholder="請輸入空腹血糖值 (mg/dL)">
+                    <span asp-validation-for="FastingBloodSugar" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="PostMealBloodSugar" class="form-label"></label>
+                    <input asp-for="PostMealBloodSugar" class="form-control" placeholder="請輸入飯後血糖值 (mg/dL)">
+                    <span asp-validation-for="PostMealBloodSugar" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="SleepDuration" class="form-label"></label>
+                <input asp-for="SleepDuration" class="form-control" placeholder="請輸入睡眠時長 (小時)">
+                <span asp-validation-for="SleepDuration" class="text-danger"></span>
+            </div>
+
+            <!-- 是否運動 -->
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" asp-for="IsExercise">
+                <label class="form-check-label" asp-for="IsExercise">
+                    @Html.DisplayNameFor(model => model.IsExercise)
+                </label>
+            </div>
+
+            <!-- 飲食紀錄 -->
+            <div class="mb-3">
+                <label asp-for="Breakfast" class="form-label"></label>
+                <input asp-for="Breakfast" class="form-control" placeholder="請輸入早餐飲食狀況，如若沒吃請打「無」">
+                <span asp-validation-for="Breakfast" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Lunch" class="form-label"></label>
+                <input asp-for="Lunch" class="form-control" placeholder="請輸入午餐飲食狀況，如若沒吃請打「無」">
+                <span asp-validation-for="Lunch" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Dinner" class="form-label"></label>
+                <input asp-for="Dinner" class="form-control" placeholder="請輸入晚餐飲食狀況，如若沒吃請打「無」">
+                <span asp-validation-for="Dinner" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="RecordDate" class="form-label"></label>
+                <input asp-for="RecordDate" class="form-control">
+                <span asp-validation-for="RecordDate" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">返回列表</a>
+                <button type="submit" class="btn btn-primary">送出</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

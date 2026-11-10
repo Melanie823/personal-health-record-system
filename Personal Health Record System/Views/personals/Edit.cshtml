@@ -1,0 +1,189 @@
+﻿@model Personal_Health_Record_System.Models.personal
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center text-primary my-4">編輯個人資料</h1>
+<h4 class="text-secondary">請輸入以下資訊</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Edit" class="p-4 shadow bg-light rounded">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <h4 class="text-secondary">帳戶資訊</h4>
+            <div class="form-group">
+                <label asp-for="Account" class="control-label"></label>
+                <input asp-for="Account" class="form-control"readonly />
+                <span asp-validation-for="Account" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="請輸入密碼" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <!-- 基本資訊 -->
+            <h4 class="text-secondary mt-4">基本資訊</h4>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="請輸入姓名" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" type="date" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <select asp-for="Gender" class="form-control">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+
+            <!-- 聯絡資訊 -->
+            <h4 class="text-secondary mt-4">聯絡資訊</h4>
+            <div class="form-group">
+                <label asp-for="MobilePhone" class="control-label"></label>
+                <input asp-for="MobilePhone" class="form-control" placeholder="請輸入手機號碼" />
+                <span asp-validation-for="MobilePhone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ContactAddress" class="control-label"></label>
+                <input asp-for="ContactAddress" class="form-control" placeholder="請輸入聯絡地址" />
+                <span asp-validation-for="ContactAddress" class="text-danger"></span>
+            </div>
+
+            <!-- 緊急聯絡人 -->
+            <h4 class="text-secondary mt-4">緊急聯絡人</h4>
+            <div class="form-group">
+                <label asp-for="EmergencyContactName" class="control-label"></label>
+                <input asp-for="EmergencyContactName" class="form-control" placeholder="請輸入緊急聯絡人姓名" />
+                <span asp-validation-for="EmergencyContactName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EmergencyContactRelationship" class="control-label"></label>
+                <input asp-for="EmergencyContactRelationship" class="form-control" placeholder="請輸入與緊急聯絡人的關係" />
+                <span asp-validation-for="EmergencyContactRelationship" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="EmergencyContactPhone" class="control-label"></label>
+                <input asp-for="EmergencyContactPhone" class="form-control" placeholder="請輸入緊急聯絡人電話" />
+                <span asp-validation-for="EmergencyContactPhone" class="text-danger"></span>
+            </div>
+            <!-- 健康資訊 -->
+            <h4 class="text-secondary mt-4">健康資訊</h4>
+            <div class="form-group">
+                <label asp-for="Height" class="control-label"></label>
+                <input asp-for="Height" class="form-control" placeholder="請輸入身高（公分）" />
+                <span asp-validation-for="Height" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Weight" class="control-label"></label>
+                <input asp-for="Weight" class="form-control" placeholder="請輸入體重（公斤）" />
+                <span asp-validation-for="Weight" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Occupation" class="control-label"></label>
+                <input asp-for="Occupation" class="form-control" placeholder="請輸入職業" />
+                <span asp-validation-for="Occupation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MedicalHistory" class="control-label"></label>
+                <textarea asp-for="MedicalHistory" class="form-control" placeholder="請輸入過去病史"></textarea>
+                <span asp-validation-for="MedicalHistory" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="FamilyHistory" class="control-label"></label>
+                <textarea asp-for="FamilyHistory" class="form-control" placeholder="請輸入家族病史"></textarea>
+                <span asp-validation-for="FamilyHistory" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="CurrentIllness" class="control-label"></label>
+                <textarea asp-for="CurrentIllness" class="form-control" placeholder="請輸入現在病史"></textarea>
+                <span asp-validation-for="CurrentIllness" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SleepPattern" class="control-label"></label>
+                <select asp-for="SleepPattern" class="form-control">
+                    <option value="每日睡足8小時">每日睡足8小時</option>
+                    <option value="不足8小時">不足8小時</option>
+                    <option value="時常失眠">時常失眠</option>
+
+                </select>
+                <span asp-validation-for="SleepPattern" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BreakfastHabit" class="control-label"></label>
+                <select asp-for="BreakfastHabit" class="form-control">
+                    <option value="每天吃">每天吃</option>
+                    <option value="偶爾">偶爾</option>
+                    <option value="不吃">不吃</option>
+                </select>
+                <span asp-validation-for="BreakfastHabit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExerciseHabit" class="control-label"></label>
+                <select asp-for="ExerciseHabit" class="form-control">
+                    <option value="少於三十分鐘">少於三十分鐘</option>
+                    <option value="半小時至一小時">半小時至一小時</option>
+                    <option value="一小時至一小時半">一小時至一小時半</option>
+                    <option value="一小時半至兩小時">一小時半至兩小時</option>
+                    <option value="兩小時以上">兩小時以上</option>
+                </select>
+                <span asp-validation-for="ExerciseHabit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SmokingHabit" class="control-label"></label>
+                <select asp-for="SmokingHabit" class="form-control">
+                    <option value="不吸菸">不吸菸</option>
+                    <option value="吸菸">吸菸</option>
+                </select>
+                <span asp-validation-for="SmokingHabit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AlcoholHabit" class="control-label"></label>
+                <select asp-for="AlcoholHabit" class="form-control">
+                    <option value="不喝酒">不喝酒</option>
+                    <option value="偶爾喝">偶爾喝</option>
+                    <option value="時常喝">時常喝</option>
+                </select>
+                <span asp-validation-for="AlcoholHabit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BetelNutHabit" class="control-label"></label>
+                <select asp-for="BetelNutHabit" class="form-control">
+                    <option value="不嚼食檳榔">不嚼食檳榔</option>
+                    <option value="嚼食檳榔">嚼食檳榔</option>
+                </select>
+                <span asp-validation-for="BetelNutHabit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HealthPromotionNeeds" class="control-label"></label>
+                <textarea asp-for="HealthPromotionNeeds" class="form-control" placeholder="請輸入其他健康需求"></textarea>
+                <span asp-validation-for="HealthPromotionNeeds" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="儲存" class="btn btn-primary px-5" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

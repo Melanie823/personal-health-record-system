@@ -1,0 +1,211 @@
+﻿@model Personal_Health_Record_System.Models.personal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center my-4">註冊帳號</h1>
+
+<div class="d-flex justify-content-center">
+    <div class="card shadow-lg p-4" style="max-width: 600px; width: 100%;">
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <h4 class="text-primary">基本資訊</h4>
+                <div class="form-group mb-3">
+                    <label asp-for="Account" class="form-label">帳號</label>
+                    <input asp-for="Account" class="form-control" placeholder="請輸入帳號（身分證字號）">
+                    <span asp-validation-for="Account" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="form-label">密碼</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="請輸入密碼">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="Name" class="form-label">姓名</label>
+                    <input asp-for="Name" class="form-control" placeholder="請輸入姓名">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="DateOfBirth" class="form-label">出生日期</label>
+                    <input asp-for="DateOfBirth" type="date" class="form-control">
+                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="Gender" class="form-label">性別</label>
+                    <select asp-for="Gender" class="form-select">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+                </div>
+                
+                <h4 class="text-primary">聯絡資訊</h4>
+                <div class="form-group mb-3">
+                    <label asp-for="MobilePhone" class="form-label">手機號碼</label>
+                    <input asp-for="MobilePhone" class="form-control" placeholder="請輸入手機號碼">
+                    <span asp-validation-for="MobilePhone" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="ContactAddress" class="form-label">聯絡地址</label>
+                    <input asp-for="ContactAddress" class="form-control" placeholder="請輸入聯絡地址">
+                    <span asp-validation-for="ContactAddress" class="text-danger"></span>
+                </div>
+                
+                <h4 class="text-primary">緊急聯絡人</h4>
+                <div class="form-group mb-3">
+                    <label asp-for="EmergencyContactName" class="form-label">緊急聯絡人姓名</label>
+                    <input asp-for="EmergencyContactName" class="form-control" placeholder="請輸入姓名">
+                    <span asp-validation-for="EmergencyContactName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3">
+                    <label asp-for="EmergencyContactRelationship" class="form-label">關係</label>
+                    <input asp-for="EmergencyContactRelationship" class="form-control" placeholder="請輸入關係">
+                    <span asp-validation-for="EmergencyContactRelationship" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-4">
+                    <label asp-for="EmergencyContactPhone" class="form-label">聯絡電話</label>
+                    <input asp-for="EmergencyContactPhone" class="form-control" placeholder="請輸入聯絡電話">
+                    <span asp-validation-for="EmergencyContactPhone" class="text-danger"></span>
+                </div>
+
+                <h4 class="text-primary">健康資訊</h4>
+                <div class="form-group">
+                    <label asp-for="Height" class="control-label"></label>
+                    <input asp-for="Height" class="form-control" placeholder="請輸入身高（公分）" />
+                    <span asp-validation-for="Height" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Weight" class="control-label"></label>
+                    <input asp-for="Weight" class="form-control" placeholder="請輸入體重（公斤）" />
+                    <span asp-validation-for="Weight" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Occupation" class="control-label"></label>
+                    <input asp-for="Occupation" class="form-control" placeholder="請輸入職業" />
+                    <span asp-validation-for="Occupation" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MedicalHistory" class="control-label"></label>
+                    <textarea asp-for="MedicalHistory" class="form-control" placeholder="請輸入過去病史"></textarea>
+                    <span asp-validation-for="MedicalHistory" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FamilyHistory" class="control-label"></label>
+                    <textarea asp-for="FamilyHistory" class="form-control" placeholder="請輸入家族病史"></textarea>
+                    <span asp-validation-for="FamilyHistory" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentIllness" class="control-label"></label>
+                    <textarea asp-for="CurrentIllness" class="form-control" placeholder="請輸入現在病史"></textarea>
+                    <span asp-validation-for="CurrentIllness" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SleepPattern" class="control-label"></label>
+                    <select asp-for="SleepPattern" class="form-control">
+                        <option value="每日睡足8小時">每日睡足8小時</option>
+                        <option value="不足8小時">不足8小時</option>
+                        <option value="時常失眠">時常失眠</option>
+
+                    </select>
+                    <span asp-validation-for="SleepPattern" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BreakfastHabit" class="control-label"></label>
+                    <select asp-for="BreakfastHabit" class="form-control">
+                        <option value="每天吃">每天吃</option>
+                        <option value="偶爾">偶爾</option>
+                        <option value="不吃">不吃</option>
+                    </select>
+                    <span asp-validation-for="BreakfastHabit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ExerciseHabit" class="control-label"></label>
+                    <select asp-for="ExerciseHabit" class="form-control">
+                        <option value="少於三十分鐘">少於三十分鐘</option>
+                        <option value="半小時至一小時">半小時至一小時</option>
+                        <option value="一小時至一小時半">一小時至一小時半</option>
+                        <option value="一小時半至兩小時">一小時半至兩小時</option>
+                        <option value="兩小時以上">兩小時以上</option>
+                    </select>
+                    <span asp-validation-for="ExerciseHabit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SmokingHabit" class="control-label"></label>
+                    <select asp-for="SmokingHabit" class="form-control">
+                        <option value="不吸菸">不吸菸</option>
+                        <option value="吸菸">吸菸</option>
+                    </select>
+                    <span asp-validation-for="SmokingHabit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AlcoholHabit" class="control-label"></label>
+                    <select asp-for="AlcoholHabit" class="form-control">
+                        <option value="不喝酒">不喝酒</option>
+                        <option value="偶爾喝">偶爾喝</option>
+                        <option value="時常喝">時常喝</option>
+                    </select>
+                    <span asp-validation-for="AlcoholHabit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BetelNutHabit" class="control-label"></label>
+                    <select asp-for="BetelNutHabit" class="form-control">
+                        <option value="不嚼食檳榔">不嚼食檳榔</option>
+                        <option value="嚼食檳榔">嚼食檳榔</option>
+                    </select>
+                    <span asp-validation-for="BetelNutHabit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="HealthPromotionNeeds" class="control-label"></label>
+                    <textarea asp-for="HealthPromotionNeeds" class="form-control" placeholder="請輸入其他健康需求"></textarea>
+                    <span asp-validation-for="HealthPromotionNeeds" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <input type="submit" value="註冊" class="btn btn-primary px-4">
+                    <p class="text-center mt-4">已經有帳號了嗎？ <a href="/Home/Index" class="text-primary">登入</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function () {
+            $('#Account').on('blur', function () {
+                var account = $(this).val();
+                var errorSpan = $('#accountError');
+                errorSpan.text('');
+
+                if (account.length > 0) {
+                    $.ajax({
+                        url: '@Url.Action("CheckAccountExists", "Personal")',
+                        type: 'GET',
+                        data: { account: account },
+                        success: function (data) {
+                            if (!data) {
+                                errorSpan.text('該帳號已被註冊');
+                            }
+                        },
+                        error: function () {
+                            errorSpan.text('檢查失敗，請稍後再試');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}
